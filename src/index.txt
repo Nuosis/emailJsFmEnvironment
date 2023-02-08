@@ -2,29 +2,25 @@
     <html lang="en">
           <head>
             <meta charset="utf-8">
-  			<link rel="stylesheet" href="./src/css/style.css">
-  			
+  			<link rel="stylesheet" href="./css/style.css">
+  			<link rel="icon" href="favicon.ico" type="image/x-icon" />
           </head>
           <body>
           		<div title="TO" id="toRow" class="gjs-row">
-          			<div title="toLabel" class="gjs-label" id="toLabelColumn" >
-						<button class="bodyButton" id="toButton" onClick = "getEmail('TO')">TO:</button>
-						<!--<div id="toLabelText" class="labelText">TO:</div>-->
+          			<div title="toLabel" id="toLabelColumn" class="gjs-label">
+          				<div id="toLabelText" class="labelText">TO:</div>
           			</div>
-					
           			<div id="toInputColumn" class="gjs-cell"></div>
           		</div>
           		<div title="CC" id="ccRow" class="gjs-row">
           			<div id="ccLabelColumn" class="gjs-label">
-						<button class="bodyButton" id="ccButton" onClick = "getEmail('CC')">CC:</button>
-          				<!--<div id="ccLabelText" class="labelText">CC:</div>/-->
+          				<div id="ccLabelText" class="labelText">CC:</div>
           			</div>
           			<div id="ccInputColumn" class="gjs-cell"></div>
           		</div>
           		<div title="BCC" id="bccRow" class="gjs-row">
           			<div title="" id="bccLabelColumn" class="gjs-label">
-						<button class="bodyButton" id="bccButton" onClick = "getEmail('BCC')">BCC:</button>
-          				<!--<div id="bccLabelText" class="labelText">BCC:</div>/-->
+          				<div id="bccLabelText" class="labelText">BCC:</div>
           			</div>
           			<div id="bccInputColumn" class="gjs-cell"></div>
           		</div>
@@ -38,11 +34,7 @@
           			</div>
           		</div>
           		<div title="message" id="emailMessageRow" class="gjs-row">
-          			<div title="" id="messagePlaceholderColumn" class="gjs-label">
-						<button title="add files" class="bodyButton" id="attachButton" onClick = "addFiles()">
-							<img src="paperClipSmall.png" alt="+ files" />
-						</button>
-					</div>
+          			<div title="" id="messagePlaceholderColumn" class="gjs-label"></div>
           			<span class="textarea" role="textbox" id=messageText contenteditable></span>
           		</div>
           		<div title="buttons" id="buttonRow" class="gjs-row">
@@ -50,7 +42,7 @@
           				<div></div>
           			</div>
           			<div id="subjectInputColumn" class="gjs-cell">
-          				<button id="button" onClick = "emailData()" >Send</button>
+          				<button id="button" onClick = "emailData()">Send</button>
           			</div>
           		</div>  
           		<p id="p01"></p>   		     		
@@ -58,6 +50,7 @@
   				<script src="src/js/lib/emails-input.js"></script>
   				<script src="src/js/email.js"></script>
   				<script src="src/js/app.js"></script>
+  				<script src="src/js/getToEmail.js"></script>
           </body>
     </html>
     

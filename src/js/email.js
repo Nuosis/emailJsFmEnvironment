@@ -40,50 +40,8 @@ textarea.addEventListener("keyup", () => {
 
 function emailData() 
 {
-
-
-/*
-//error trap to make sure email (at least one) is provided
-//this works
-try{
-	let x = document.getElementsByClassName('content')[0].innerText ;
-}
-
-//this does not
-catch(err) {
-	x ;	
-}
-*/
-
-var emails =  document.getElementsByClassName("content");
-var values = Array.prototype.map.call(emails, function(el) {
-	return el.innerText;
-});
-//console.log(values);
-
-
-
 var subject = document.getElementById("subjectFormat").value;
 var message = document.getElementsByClassName('textarea')[0].innerHTML;
-
-
-
-// attempting to get files out -- easier to handle within FM
-
-//const filesElement = document.getElementById("files");
-//filesElement.addEventListener("change", handleFiles, false);
-
-
-//var fileList = function handleFiles() {
-//  const fileList = this.files; /* now you can work with the file list */
-//  return fileList
-//	}
-
-//var files = document.getElementById("files").value;
-
-//console.log(files)
-
-
 var dataObject = { "emails" : values , "subjectText" : subject ,"messageText" : message };
 //console.log(dataObject)
 
@@ -94,13 +52,19 @@ FileMaker.PerformScript("send HTML EMail" , obj );
 
 }
 
+function getEmail(_refElement) {
+  //pass referring element for return trip when adding email
+  //var emailREf = "To";
+  FileMaker.PerformScript("pop EMail" , _refElement );
 
+}
 
+function addFiles()
+{
 
+  FileMaker.PerformScript("add Files");
 
-
-
-
+}
 
 
 
